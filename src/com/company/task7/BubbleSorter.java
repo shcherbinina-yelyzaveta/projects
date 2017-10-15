@@ -29,7 +29,6 @@ public class BubbleSorter {
                 }
                 if (!swap) {
                     System.out.println(i + " " + j);
-                    continue;
                 }
             }
             if (!swap) {
