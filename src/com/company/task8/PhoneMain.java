@@ -1,9 +1,9 @@
 package com.company.task8;
 
 /**
- * Created by student on 16.10.2017.
+ * Created by Liza on 16.10.2017.
  */
-public class Main {
+public class PhoneMain {
     public static void main(String[] args) {
         Phone obj1 = new Phone();
         Phone obj2 = new Phone();
@@ -26,5 +26,11 @@ public class Main {
         obj3.weight = 25;
         obj3.receiveCall("Bogdan");
         System.out.println(obj3.getPhoneNumber());
+
+        Phone obj4 = new Phone();
+        System.out.println(obj4.model + " " + obj4.getPhoneNumber());
+
+        Phone obj5 = new Phone("7254489", "Samsung S8", 25);
+        obj5.receiveCall("Alex", obj5.getPhoneNumber());
     }
 }
