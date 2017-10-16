@@ -48,9 +48,9 @@ public class MatrixMain {
                     } else {
                         System.out.println("Input Error");
                     }
-                    result.multiplication(matrix, a);
+                    result = matrix.multiplication(a);
                     matrix.print();
-                    System.out.println("\n*\n" + a + "\n=");
+                    System.out.println("*\n" + a + "\n=");
                     result.print();
                     break;
                 case 6:

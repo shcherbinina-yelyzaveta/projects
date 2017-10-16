@@ -56,12 +56,14 @@ public class Matrix {
         }
     }
 
-    void multiplication(Matrix matrix, double a) {
+    Matrix multiplication(double a) {
+        Matrix result = new Matrix(this.strings,this.columns);
         for (int i = 0; i < this.strings; i++) {
             for (int j = 0; j < this.columns; j++) {
-                this.matrix[i][j] = matrix.matrix[i][j] * a;
+                result.matrix[i][j] = this.matrix[i][j] * a;
             }
         }
+        return result;
     }
 
     void print() {
