@@ -38,7 +38,12 @@ public class Matrix {
     Matrix(double[][] matrix) {
         this.strings = matrix.length;
         this.columns = matrix[0].length;
-        this.matrix = matrix;
+        this.matrix = new double[strings][columns];
+        for (int i = 0; i < this.strings; i++) {
+            for (int j = 0; j < this.columns; j++) {
+                this.matrix[i][j] = matrix[i][j];
+            }
+        }
     }
 
     Matrix sum(Matrix matrix1) {
@@ -57,10 +62,10 @@ public class Matrix {
     }
 
     Matrix multiplication(double a) {
-        Matrix result = new Matrix(this.strings,this.columns);
+        Matrix result = new Matrix(this.matrix);
         for (int i = 0; i < this.strings; i++) {
             for (int j = 0; j < this.columns; j++) {
-                result.matrix[i][j] = this.matrix[i][j] * a;
+                result.matrix[i][j] *= a;
             }
         }
         return result;
