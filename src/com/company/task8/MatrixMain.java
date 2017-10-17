@@ -9,6 +9,7 @@ public class MatrixMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Matrix matrix = new Matrix();
+        Matrix operand = new Matrix();
         Matrix result = new Matrix();
         boolean exit = false;
         while (!exit) {
@@ -32,7 +33,7 @@ public class MatrixMain {
                     matrix = Matrix.in(scanner);
                     break;
                 case 4:
-                    Matrix operand = new Matrix(matrix.strings, matrix.columns);
+                    operand = new Matrix(matrix.strings, matrix.columns);
                     result = matrix.sum(operand);
                     matrix.print();
                     System.out.println("+");
@@ -56,6 +57,15 @@ public class MatrixMain {
                 case 6:
                     matrix.print();
                     break;
+                case 7:
+                    operand = new Matrix(matrix.columns, matrix.strings);
+                    result = matrix.multiplication(operand);
+                    matrix.print();
+                    System.out.println("*");
+                    operand.print();
+                    System.out.println("=");
+                    result.print();
+                    break;
             }
         }
     }
@@ -63,11 +73,12 @@ public class MatrixMain {
     public static int menu(Scanner scanner) {
         System.out.println("\nВыберите действие:");
         System.out.println("1 - создать пустую матрицу вещественных чисел (по умолчанию размер матрицы 2х2)");
-        System.out.println("2 - создать матрицу вещественных чисел заданого размера (матрица заполниться случайными числами)");
+        System.out.println("2 - создать матрицу вещественных чисел заданого размера (матрица заполниться случайными числами от 0 до 10)");
         System.out.println("3 - ввести матрицу с клавиатуры");
         System.out.println("4 - сложить две матрицы");
         System.out.println("5 - умножить матрицу на число");
         System.out.println("6 - распечатать матрицу");
+        System.out.println("7 - умножить две матрицы");
         System.out.println("0 - выход из программы");
         if (scanner.hasNextInt()) {
             return scanner.nextInt();

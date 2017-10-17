@@ -30,7 +30,7 @@ public class Matrix {
         matrix = new double[strings][columns];
         for (int i = 0; i < strings; i++) {
             for (int j = 0; j < columns; j++) {
-                matrix[i][j] = Math.random() * 20;
+                matrix[i][j] = Math.random() * 10;
             }
         }
     }
@@ -69,6 +69,22 @@ public class Matrix {
             }
         }
         return result;
+    }
+
+    Matrix multiplication(Matrix operand) {
+        if (this.columns == operand.strings) {
+            Matrix result = new Matrix(this.strings, operand.columns);
+            for (int i = 0; i < this.strings; i++) {
+                for (int j = 0; j < operand.columns; j++) {
+                    for (int r = 0; r < operand.strings; r++) {
+                        result.matrix[i][j] += this.matrix[i][r] * operand.matrix[r][j];
+                    }
+                }
+            }
+            return result;
+        } else {
+            return null;
+        }
     }
 
     void print() {
