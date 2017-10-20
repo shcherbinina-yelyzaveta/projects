@@ -20,14 +20,19 @@ public class MatrixMain {
                 case 1:
                     break;
                 case 2:
+                    int n = 0, m = 0;
                     System.out.println("Введите размер для будущего массива");
                     if (scanner.hasNextInt()) {
-                        int n = scanner.nextInt();
-                        int m = scanner.nextInt();
-                        matrix = new Matrix(n, m);
+                        n = scanner.nextInt();
                     } else {
                         System.out.println("Input Error!");
                     }
+                    if (scanner.hasNextInt()) {
+                        m = scanner.nextInt();
+                    } else {
+                        System.out.println("Input Error!");
+                    }
+                    matrix = new Matrix(n, m);
                     break;
                 case 3:
                     matrix = Matrix.in(scanner);

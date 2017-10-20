@@ -47,7 +47,7 @@ public class Matrix {
     }
 
     Matrix sum(Matrix matrix1) {
-        if (matrix.length == matrix1.strings & matrix[0].length == matrix1.columns) {
+        if (matrix.length == matrix1.strings && matrix[0].length == matrix1.columns) {
             Matrix sum = new Matrix(matrix1.strings, matrix1.columns);
             for (int i = 0; i < matrix.length; i++) {
                 for (int j = 0; j < matrix[i].length; j++) {
@@ -101,23 +101,27 @@ public class Matrix {
         System.out.println("Введите размеры матрицы");
         if (scanner.hasNextInt()) {
             in.strings = scanner.nextInt();
+        } else {
+            System.out.println("Input Error!");
+        }
+        if (scanner.hasNextInt()) {
             in.columns = scanner.nextInt();
-            System.out.println("Введите матрицу (каждый элемент с новой строки (Enter))");
-            in:
-            {
-                for (int i = 0; i < in.strings; i++) {
-                    for (int j = 0; j < in.columns; j++) {
-                        if (scanner.hasNextDouble()) {
-                            in.matrix[i][j] = scanner.nextDouble();
-                        } else {
-                            System.out.println("Input Error!");
-                            break in;
-                        }
+        } else {
+            System.out.println("Input Error!");
+        }
+        System.out.println("Введите матрицу (каждый элемент с новой строки (Enter))");
+        in:
+        {
+            for (int i = 0; i < in.strings; i++) {
+                for (int j = 0; j < in.columns; j++) {
+                    if (scanner.hasNextDouble()) {
+                        in.matrix[i][j] = scanner.nextDouble();
+                    } else {
+                        System.out.println("Input Error!");
+                        break in;
                     }
                 }
             }
-        } else {
-            System.out.println("Input Error!");
         }
         return in;
     }
