@@ -10,16 +10,37 @@ package com.company.task8;
  * Created by Liza on 16.10.2017.
  */
 public class Person {
-    String fullName;
-    int age;
+    private String fullName;
+    private int age;
 
-    Person() {
+    public Person() {
         this.fullName = "Somebody";
-        this.age = 30;
+        this.age = 0;
     }
 
-    Person(String fullName, int age) {
+    public Person(String fullName, int age) {
         this.fullName = fullName;
+        this.age = age;
+    }
+
+    public Person(Person person) {
+        this.fullName = person.getFullName();
+        this.age = person.getAge();
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -31,5 +52,11 @@ public class Person {
         System.out.println(this.fullName + " talk");
     }
 
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fullName='" + fullName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
