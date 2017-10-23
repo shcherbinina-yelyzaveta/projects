@@ -31,4 +31,8 @@ public class Aspirant extends Student {
                 "scientificWork='" + scientificWork + '\'' +
                 '}';
     }
+
+    public void getScholarship() {
+        System.out.println("200 grn");
+    }
 }

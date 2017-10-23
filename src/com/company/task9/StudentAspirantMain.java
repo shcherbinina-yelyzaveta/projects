@@ -10,5 +10,12 @@ public class StudentAspirantMain {
     public static void main(String[] args) {
         Student smb = new Aspirant("Liza", "Shcherbinina", "kit25a", "JavaCourses");
         System.out.println(smb);
+        Student[] students = new Student[3];
+        students[0] = smb;
+        students[1] = new Aspirant();
+        students[2] = new Student();
+        for (Student student : students) {
+            student.getScholarship();
+        }
     }
 }
