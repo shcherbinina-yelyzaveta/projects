@@ -99,16 +99,8 @@ public class Matrix {
     static Matrix in(Scanner scanner) {
         Matrix in = new Matrix();
         System.out.println("Введите размеры матрицы");
-        if (scanner.hasNextInt()) {
-            in.strings = scanner.nextInt();
-        } else {
-            System.out.println("Input Error!");
-        }
-        if (scanner.hasNextInt()) {
-            in.columns = scanner.nextInt();
-        } else {
-            System.out.println("Input Error!");
-        }
+        in.strings = inInt(scanner);
+        in.columns = inInt(scanner);
         System.out.println("Введите матрицу (каждый элемент с новой строки (Enter))");
         in:
         {
@@ -124,5 +116,14 @@ public class Matrix {
             }
         }
         return in;
+    }
+
+    static int inInt(Scanner scanner) {
+        if (scanner.hasNextInt()) {
+            return scanner.nextInt();
+        } else {
+            System.out.println("Input Error");
+            return 0;
+        }
     }
 }
