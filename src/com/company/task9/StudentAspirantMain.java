@@ -8,7 +8,7 @@ import com.company.task9.student.Student;
  */
 public class StudentAspirantMain {
     public static void main(String[] args) {
-        Student smb = new Aspirant("Liza","Shcherbinina","kit25a","JavaCourses");
-        System.out.println(smb.toString());
+        Student smb = new Aspirant("Liza", "Shcherbinina", "kit25a", "JavaCourses");
+        System.out.println(smb);
     }
 }

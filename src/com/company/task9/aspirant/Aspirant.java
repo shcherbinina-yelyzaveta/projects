@@ -9,7 +9,6 @@ public class Aspirant extends Student {
     String scientificWork;
 
     public Aspirant() {
-        super();
         this.scientificWork = "scientific work";
     }
 
