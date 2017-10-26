@@ -19,15 +19,18 @@ public class FlowersMain {
         Flower[] bouquet3 = new Flower[1];
         bouquet3[0] = new Carnation("Россия", 10);
 
-        Flower[][] bouquets = {bouquet1,bouquet2,bouquet3};
-        for (int i = 0; i<bouquets.length;i++){
-            System.out.println("Букет №" + (i+1));
+        Flower[][] bouquets = {bouquet1, bouquet2, bouquet3};
+        for (int i = 0; i < bouquets.length; i++) {
+            System.out.println("Букет №" + (i + 1));
             int val = 0;
-            for(int j = 0;j<bouquets[i].length;j++){
-                val+=bouquets[i][j].val();
+            for (int j = 0; j < bouquets[i].length; j++) {
+                val += bouquets[i][j].val();
                 System.out.println(bouquets[i][j]);
             }
             System.out.println("Стоимость: " + val + " грн");
         }
+
+        System.out.println("Кол-во проданных цветов: роз " + Rose.count + ", тульпанов " + Tulip.count +
+                ", ромашек " + Chamomile.count + ", гвоздик " + Carnation.count);
     }
 }
