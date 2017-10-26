@@ -64,4 +64,43 @@ public class Rectangle extends Shape {
         System.out.println("Рисуем прямоугольник с координатами: левый нижний угол (" + x1 + ";" + y1 +
                 "), правый верхний угол (" + x2 + ";" + y2 + ")" + ". Цвет " + this.getColor());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Rectangle)) return false;
+        if (!super.equals(o)) return false;
+
+        Rectangle rectangle = (Rectangle) o;
+
+        if (Double.compare(rectangle.getX1(), getX1()) != 0) return false;
+        if (Double.compare(rectangle.getY1(), getY1()) != 0) return false;
+        if (Double.compare(rectangle.getX2(), getX2()) != 0) return false;
+        return Double.compare(rectangle.getY2(), getY2()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        long temp;
+        temp = Double.doubleToLongBits(getX1());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getY1());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getX2());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getY2());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "x1=" + x1 +
+                ", y1=" + y1 +
+                ", x2=" + x2 +
+                ", y2=" + y2 +
+                '}';
+    }
 }

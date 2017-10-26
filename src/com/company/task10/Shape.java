@@ -23,4 +23,26 @@ abstract public class Shape {
     }
 
     abstract public void draw();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Shape)) return false;
+
+        Shape shape = (Shape) o;
+
+        return getColor().equals(shape.getColor());
+    }
+
+    @Override
+    public int hashCode() {
+        return getColor().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "color='" + color + '\'' +
+                '}';
+    }
 }

@@ -55,4 +55,39 @@ public class Circle extends Shape {
         System.out.println("Рисуем круг. Центр с координатами (" + x + ";" + y + "). Радиус = " + radius +
                 " , цвет " + this.getColor());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Circle)) return false;
+        if (!super.equals(o)) return false;
+
+        Circle circle = (Circle) o;
+
+        if (Double.compare(circle.getRadius(), getRadius()) != 0) return false;
+        if (Double.compare(circle.getX(), getX()) != 0) return false;
+        return Double.compare(circle.getY(), getY()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        long temp;
+        temp = Double.doubleToLongBits(getRadius());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getX());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getY());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
