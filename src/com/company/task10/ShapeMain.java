@@ -1,5 +1,9 @@
 package com.company.task10;
 
+import com.company.task10.shape.Circle;
+import com.company.task10.shape.Rectangle;
+import com.company.task10.shape.Shape;
+
 /**
  * Created by Liza on 23.10.2017.
  */

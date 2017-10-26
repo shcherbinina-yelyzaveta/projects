@@ -1,4 +1,4 @@
-package com.company.task10;
+package com.company.task10.shape;
 
 /**
  * Created by Liza on 23.10.2017.
