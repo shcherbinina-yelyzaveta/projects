@@ -12,7 +12,7 @@ package com.company.task8;
  * е) Вызвать из конструктора с параметрами конструктор по умолчанию.
  * ж) Добавьте перегруженный метод receiveCall, который принимает два параметра - имя звонящего и номер телефона звонящего.
  * з) Создать метод sendMessage  с аргументами переменной длины. Данный метод принимает на вход номера телефонов,
- *    которым будет отправлено сообщение. Метод выводит на консоль номера этих телефонов.
+ * которым будет отправлено сообщение. Метод выводит на консоль номера этих телефонов.
  * и) Изменить класс Phone в соответствии с концепцией JavaBean.
  * к) Реализовать подсчет количества созданных телефонов с помощью статической переменной.
  * Вызвать этот метод.
@@ -25,14 +25,14 @@ public class Phone {
     private int weight;
     private static int count = 0;
 
-    Phone() {
+    public Phone() {
         this.number = "0000";
         this.model = "something";
         this.weight = 10;
         count++;
     }
 
-    Phone(String number, String model, int weight) {
+    public Phone(String number, String model, int weight) {
         this();
         this.number = number;
         this.model = model;
@@ -67,15 +67,15 @@ public class Phone {
         this.weight = weight;
     }
 
-    void receiveCall(String name) {
+    public void receiveCall(String name) {
         System.out.println("Звонит " + name);
     }
 
-    void receiveCall(String name, String number) {
+    public void receiveCall(String name, String number) {
         System.out.println("Звонит " + name + " номер: " + number);
     }
 
-    void sendMassage(String... number) {
+    public void sendMassage(String... number) {
         System.out.println("Отправить сообщение:");
         for (String tmp : number) {
             System.out.println(tmp);

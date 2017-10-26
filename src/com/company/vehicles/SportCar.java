@@ -12,12 +12,10 @@ public class SportCar extends Car {
     private double speed;
 
     public SportCar() {
-        super();
         this.speed = 0;
     }
 
     public SportCar(double speed) {
-        super();
         this.speed = speed;
     }
 

@@ -9,7 +9,6 @@ public class Aspirant extends Student {
     String scientificWork;
 
     public Aspirant() {
-        super();
         this.scientificWork = "scientific work";
     }
 
@@ -31,5 +30,9 @@ public class Aspirant extends Student {
         return super.toString() + "Aspirant{" +
                 "scientificWork='" + scientificWork + '\'' +
                 '}';
+    }
+
+    public void getScholarship() {
+        System.out.println("200 grn");
     }
 }

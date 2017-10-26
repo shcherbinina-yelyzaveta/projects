@@ -53,4 +53,8 @@ public class Student {
                 ", group='" + group + '\'' +
                 '}';
     }
+
+    public void getScholarship() {
+        System.out.println("100 grn");
+    }
 }

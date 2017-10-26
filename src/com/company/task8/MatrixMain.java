@@ -22,16 +22,8 @@ public class MatrixMain {
                 case 2:
                     int n = 0, m = 0;
                     System.out.println("Введите размер для будущего массива");
-                    if (scanner.hasNextInt()) {
-                        n = scanner.nextInt();
-                    } else {
-                        System.out.println("Input Error!");
-                    }
-                    if (scanner.hasNextInt()) {
-                        m = scanner.nextInt();
-                    } else {
-                        System.out.println("Input Error!");
-                    }
+                    n = Matrix.inInt(scanner);
+                    m = Matrix.inInt(scanner);
                     matrix = new Matrix(n, m);
                     break;
                 case 3:

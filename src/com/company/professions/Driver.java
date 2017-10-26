@@ -13,12 +13,10 @@ public class Driver extends Person {
     private int experience;
 
     public Driver() {
-        super();
         this.experience = 0;
     }
 
     public Driver(int experience) {
-        super();
         this.experience = experience;
     }
 
