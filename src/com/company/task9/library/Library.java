@@ -42,6 +42,14 @@ public class Library extends LibraryUser {
         this.books = books;
     }
 
+    public LibraryUser[] getUsers() {
+        return users;
+    }
+
+    public void setUsers(LibraryUser[] users) {
+        this.users = users;
+    }
+
     public void takeBook(int a) {
         System.out.println("Взято книг - " + a);
     }
@@ -49,7 +57,6 @@ public class Library extends LibraryUser {
     public void returnBook(int a) {
         System.out.println("Вернули книг - " + a);
     }
-
 
     public void takeBook(String... bookNames) {
         System.out.println("Взяли такие книги:");
@@ -65,7 +72,6 @@ public class Library extends LibraryUser {
         }
     }
 
-
     public void returnBook(String... bookNames) {
         System.out.println("Вернули такие книги:");
         for (String str : bookNames) {
@@ -78,14 +84,6 @@ public class Library extends LibraryUser {
         for (Book book : books) {
             System.out.println(book);
         }
-    }
-
-    public LibraryUser[] getUsers() {
-        return users;
-    }
-
-    public void setUsers(LibraryUser[] users) {
-        this.users = users;
     }
 
     public String inString(Scanner scanner) {
