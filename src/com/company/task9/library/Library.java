@@ -1,9 +1,8 @@
 package com.company.task9.library;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Library extends LibraryUser {
+public class Library {
     private LibraryUser[] users;
     private Book[] books;
 
@@ -17,21 +16,14 @@ public class Library extends LibraryUser {
         this.books = books;
     }
 
-    public Library(String fullName, String readerTickerNumber, String faculty, String birthday, String phoneNumber) {
-        super(fullName, readerTickerNumber, faculty, birthday, phoneNumber);
-        this.books = new Book[1];
+    public Library(Book[] books) {
+        this.books = books;
         this.users = new LibraryUser[1];
     }
 
-    public Library(String fullName, String readerTickerNumber, String faculty, String birthday, String phoneNumber, Book[] books) {
-        super(fullName, readerTickerNumber, faculty, birthday, phoneNumber);
-        this.books = books;
-    }
-
-    public Library(String fullName, String readerTickerNumber, String faculty, String birthday, String phoneNumber, LibraryUser[] users, Book[] books) {
-        super(fullName, readerTickerNumber, faculty, birthday, phoneNumber);
+    public Library(LibraryUser[] users) {
         this.users = users;
-        this.books = books;
+        this.books = new Book[1];
     }
 
     public Book[] getBooks() {
