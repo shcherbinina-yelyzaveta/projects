@@ -16,6 +16,6 @@ public class First {
         defaultParameter = 4;
     }
     public static void data(){
-        System.out.println("https://docs.google.com/spreadsheets/d/15-1IS9CDLCpn0DMIaCPz57bRRqlXb6VTKQ5KixW2xF0/edit#gid=0");
+        System.out.println("https://docs.google.com/spreadsheets/d/15-1IS9CDLCpn0DMIaCPz57bRRqlXb6VTKQ5KixW2xF0/edit?usp=sharing");
     }
 }
