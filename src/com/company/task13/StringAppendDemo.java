@@ -24,7 +24,7 @@ public class StringAppendDemo {
     }
 
     public static void replaceMethod(StringBuilder sb) {
-        sb.replace(4,5,"равно");
+        sb.replace(4, 5, "равно");
         System.out.println(sb);
         sb.delete(0, sb.capacity());
     }
