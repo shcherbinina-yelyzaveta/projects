@@ -54,7 +54,7 @@ public class Person {
 
     @Override
     public String toString() {
-        String s = String.format("%s is %d years old!",fullName,age);
+        String s = String.format("%s is %d years old!", fullName, age);
         return s;
     }
 }
