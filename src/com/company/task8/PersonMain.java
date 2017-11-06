@@ -7,6 +7,7 @@ public class PersonMain {
     public static void main(String[] args) {
         Person person1 = new Person();
         Person person2 = new Person("Liza Shcherbinina", 19);
+        System.out.println(person2);
         System.out.println(person1.getFullName() + " " + person1.getAge());
         System.out.println(person2.getFullName() + " " + person2.getAge());
         person1.move();
