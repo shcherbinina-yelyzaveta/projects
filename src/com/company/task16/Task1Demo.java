@@ -1,9 +1,14 @@
 package com.company.task16;
 
+import com.company.task10.animals.Animal;
+import com.company.task10.animals.Cat;
+
+import java.io.Serializable;
+
 /**
  * Created by student on 10.11.2017.
  */
-public class Task1Demo<T, V, M> {
+public class Task1Demo<T extends Comparable, V extends Animal & Serializable, M extends Number> {
     private T type1;
     private V type2;
     private M type3;
@@ -33,7 +38,7 @@ public class Task1Demo<T, V, M> {
     }
 
     public static void main(String[] args) {
-        Task1Demo<Integer, Double, String> obj = new Task1Demo<>(5, 2.5, "Hello");
+        Task1Demo<String, Animal, Integer> obj = new Task1Demo<>("Hello", new Cat(), 5);
         obj.showInfo();
 
         System.out.println("Type 1 - " + obj.getType1());

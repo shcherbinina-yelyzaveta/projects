@@ -1,6 +1,8 @@
 package com.company.task10.animals;
 
-abstract public class Animal {
+import java.io.Serializable;
+
+abstract public class Animal implements Serializable {
     private String food;
     private String location;
 
