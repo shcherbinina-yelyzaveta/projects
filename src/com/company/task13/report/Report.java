@@ -5,10 +5,10 @@ import java.util.Date;
 public class Report {
     public static void main(String[] args) {
         Employee[] employees = new Employee[4];
-        employees[0] = new Employee("Ященко Олександр Владимирович", 2000);
-        employees[1] = new Employee("Марценюк Богдан Вячеславович", 1011.5);
+        employees[0] = new Employee("Ященко Олександр Владимирович", 2000, 1999999999);
+        employees[1] = new Employee("Марценюк Богдан Вячеславович", 1011.5, 1999999999);
         employees[2] = new Employee();
-        employees[3] = new Employee("Щербинина Елизавета Николаевна", 5500.5);
+        employees[3] = new Employee("Щербинина Елизавета Николаевна", 5500.5, 1999999999);
         generateReport(employees);
     }
 
