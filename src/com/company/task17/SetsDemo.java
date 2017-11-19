@@ -17,6 +17,11 @@ public class SetsDemo {
                 result.add(o);
             }
         }
+        for (Object o : set2) {
+            if (set1.contains(o)) {
+                result.add(o);
+            }
+        }
         return result;
     }
 
