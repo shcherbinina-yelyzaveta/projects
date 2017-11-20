@@ -1,7 +1,6 @@
 package com.company.task16;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Matrix<T extends Number> {
     private T[][] matrix;
@@ -37,7 +36,7 @@ public class Matrix<T extends Number> {
         this.columns = columns;
     }
 
-    Matrix<T> sum(Matrix<?> matrix1) {
+    Matrix<T> sum(Matrix<? extends Number> matrix1) {
         if (matrix.length == matrix1.strings && matrix[0].length == matrix1.columns) {
             Number[][] sum = new Number[this.strings][this.columns];
             for (int i = 0; i < matrix.length; i++) {
@@ -64,7 +63,7 @@ public class Matrix<T extends Number> {
         return m;
     }
 
-    Matrix<T> multiplication(Matrix<?> operand) {
+    Matrix<T> multiplication(Matrix<? extends Number> operand) {
         if (this.columns == operand.strings) {
             Number[][] result = new Number[this.strings][operand.columns];
             for (int i = 0; i < result.length; i++) {

@@ -12,11 +12,8 @@ public class SetsDemo {
 
     public static Set intersect(Set<?> set1, Set<?> set2) {
         Set<Object> result = new HashSet<>();
-        for (Object o : set1) {
-            if (set2.contains(o)) {
-                result.add(o);
-            }
-        }
+        result.addAll(set1);
+        result.retainAll(set2);
         return result;
     }
 
