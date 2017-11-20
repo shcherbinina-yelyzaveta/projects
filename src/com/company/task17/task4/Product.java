@@ -1,6 +1,6 @@
 package com.company.task17.task4;
 
-public class Product implements Comparable<Product> {
+public class Product {
     private String name;
     private int value;
     private int rating;
@@ -15,6 +15,12 @@ public class Product implements Comparable<Product> {
         this.name = name;
         this.value = value;
         this.rating = rating;
+    }
+
+    public Product(Product product) {
+        this.name = product.name;
+        this.value = product.value;
+        this.rating = product.rating;
     }
 
     public String getName() {
@@ -70,16 +76,15 @@ public class Product implements Comparable<Product> {
                 '}';
     }
 
-    @Override
-    public int compareTo(Product o) {
-        int result = this.getName().compareTo(o.getName());
-        if (result != 0) {
-            return result;
-        }
-        result = this.getRating() - o.getRating();
-        if (result != 0) {
-            return result;
-        }
-        return this.getValue() - o.getValue();
+    public int compareName(String name) {
+        return this.getName().compareTo(name);
+    }
+
+    public int compareValue(int value) {
+        return this.getValue() - value;
+    }
+
+    public int compareRating(int rating) {
+        return this.getRating() - rating;
     }
 }
