@@ -1,17 +1,18 @@
 package com.company.task17.task4;
 
+import java.util.Comparator;
 import java.util.*;
 
 public class Category {
     private String name;
-    private Product[] products;
+    private Set<Product> products;
 
     public Category() {
         this.name = "name";
-        this.products = new Product[1];
+        this.products = new HashSet<>();
     }
 
-    public Category(String name, Product[] products) {
+    public Category(String name, Set<Product> products) {
         this.name = name;
         this.products = products;
     }
@@ -24,11 +25,11 @@ public class Category {
         this.name = name;
     }
 
-    public Product[] getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Product[] products) {
+    public void setProducts(Set<Product> products) {
         this.products = products;
     }
 
@@ -40,14 +41,13 @@ public class Category {
         Category category = (Category) o;
 
         if (name != null ? !name.equals(category.name) : category.name != null) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(products, category.products);
+        return products != null ? products.equals(category.products) : category.products == null;
     }
 
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + Arrays.hashCode(products);
+        result = 31 * result + (products != null ? products.hashCode() : 0);
         return result;
     }
 
@@ -62,11 +62,11 @@ public class Category {
     public String toString() {
         return "Category{" +
                 "name='" + name + '\'' +
-                ", products=" + Arrays.toString(products) +
+                ", products=" + products +
                 '}';
     }
 
-    public int scanOption(Scanner scanner) {
+    public static int scanOption(Scanner scanner) {
         int result = 0;
         System.out.println("Сортировать по:");
         System.out.println("1 - по имени");
@@ -78,61 +78,52 @@ public class Category {
         return result;
     }
 
-    public void sort(Scanner scanner) {
+    public static SortedSet<Product> sort(Scanner scanner) {
+        SortedSet<Product> sorted;
         int option = scanOption(scanner);
         switch (option) {
             case 1:
-                for (int i = 0; i < products.length - 1; i++) {
-                    for (int j = 0; j < products.length - i - 1; j++) {
-                        if (products[j].compareName(products[j + 1].getName()) == -1) {
-                            swap(j, j + 1);
-                        }
+                sorted = new TreeSet<>(new Comparator<Product>() {
+                    @Override
+                    public int compare(Product p1, Product p2) {
+                        return p1.getName().compareTo(p2.getName());
                     }
-                }
+                });
                 break;
             case 2:
-                for (int i = 0; i < products.length - 1; i++) {
-                    for (int j = 0; j < products.length - i - 1; j++) {
-                        if (products[j].compareValue(products[j + 1].getValue()) > 0) {
-                            swap(j, j + 1);
-                        }
+                sorted = new TreeSet<>(new Comparator<Product>() {
+                    @Override
+                    public int compare(Product p1, Product p2) {
+                        return p1.getValue() < p2.getValue() ? -1 : 1;
                     }
-                }
+                });
                 break;
             case 3:
-                for (int i = 0; i < products.length - 1; i++) {
-                    for (int j = 0; j < products.length - i - 1; j++) {
-                        if (products[j].compareRating(products[j + 1].getRating()) > 0) {
-                            swap(j, j + 1);
-                        }
-                    }
-                }
-                break;
             default:
+                sorted = new TreeSet<>(new Comparator<Product>() {
+                    @Override
+                    public int compare(Product p1, Product p2) {
+                        return p1.getRating() < p2.getRating() ? -1 : 1;
+                    }
+                });
                 break;
         }
-    }
-
-    public void swap(int i, int j) {
-        Product tmp = new Product(this.products[i]);
-        products[i] = products[j];
-        products[j] = tmp;
+        return sorted;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Product[] products = new Product[2];
-        products[0] = new Product("banana", 25, 5);
-        products[1] = new Product("apple", 15, 7);
-        Product[] products1 = new Product[3];
-        products1[0] = new Product("Iphone 10", 30000, 10);
-        products1[1] = new Product("Lenovo K5", 4000, 6);
-        products1[2] = new Product("Iphone 8", 24500, 9);
+        SortedSet<Product> set1 = sort(scanner);
+        set1.add(new Product("banana", 25, 5));
+        set1.add(new Product("apple", 15, 7));
+        SortedSet<Product> set2 = sort(scanner);
+        set2.add(new Product("Iphone 10", 30000, 10));
+        set2.add(new Product("Lenovo K5", 4000, 6));
+        set2.add(new Product("Iphone 8", 24500, 9));
         Category[] categories = new Category[2];
-        categories[0] = new Category("meal", products);
-        categories[1] = new Category("phones", products1);
+        categories[0] = new Category("meal", set1);
+        categories[1] = new Category("phones", set2);
         for (Category c : categories) {
-            c.sort(scanner);
             c.print();
         }
     }

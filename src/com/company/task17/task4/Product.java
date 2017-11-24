@@ -75,16 +75,4 @@ public class Product {
                 ", rating=" + rating +
                 '}';
     }
-
-    public int compareName(String name) {
-        return this.getName().compareTo(name);
-    }
-
-    public int compareValue(int value) {
-        return this.getValue() - value;
-    }
-
-    public int compareRating(int rating) {
-        return this.getRating() - rating;
-    }
 }
