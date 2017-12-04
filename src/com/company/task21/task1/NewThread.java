@@ -10,6 +10,11 @@ public class NewThread implements Runnable {
             if (i % 10 == 0) {
                 System.out.println(i + " " + Thread.currentThread().getName() + " ");
             }
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
