@@ -94,7 +94,7 @@ public class Category {
                 sorted = new TreeSet<>(new Comparator<Product>() {
                     @Override
                     public int compare(Product p1, Product p2) {
-                        return p1.getValue() < p2.getValue() ? -1 : 1;
+                        return p1.getValue() - p2.getValue();
                     }
                 });
                 break;
@@ -103,7 +103,7 @@ public class Category {
                 sorted = new TreeSet<>(new Comparator<Product>() {
                     @Override
                     public int compare(Product p1, Product p2) {
-                        return p1.getRating() < p2.getRating() ? -1 : 1;
+                        return p1.getRating() - p2.getRating();
                     }
                 });
                 break;
