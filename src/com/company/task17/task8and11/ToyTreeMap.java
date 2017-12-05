@@ -1,19 +1,19 @@
-package com.company.task17.task8;
+package com.company.task17.task8and11;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
- * Created by student on 20.11.2017.
+ * Created by Liza Shcherbinina on 24.11.2017.
  */
-public class ToyMap {
+public class ToyTreeMap {
     public static void main(String[] args) {
-        Map<String, Toy> map = new HashMap<>();
+        Map<String, Toy> map = new TreeMap<>();
         map.put("Car", new Toy("Car", 50));
-        map.put("Doll", new Toy("Doll", 50));
         map.put("Toy", new Toy());
+        map.put("Doll", new Toy("Doll", 50));
 
         printMap(map);
         printKeys(map);

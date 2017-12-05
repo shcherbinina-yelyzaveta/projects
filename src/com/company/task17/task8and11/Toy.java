@@ -1,4 +1,4 @@
-package com.company.task17.task8;
+package com.company.task17.task8and11;
 
 /**
  * Created by student on 20.11.2017.
