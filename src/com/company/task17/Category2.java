@@ -116,12 +116,12 @@ public class Category2 {
         List<Product> list1 = new ArrayList<>();
         list1.add(new Product("banana", 25, 5));
         list1.add(new Product("apple", 15, 7));
-        sort(list1,scanner);
+        sort(list1, scanner);
         List<Product> list2 = new ArrayList<>();
         list2.add(new Product("Iphone 10", 30000, 10));
         list2.add(new Product("Lenovo K5", 4000, 6));
         list2.add(new Product("Iphone 8", 24500, 9));
-        sort(list2,scanner);
+        sort(list2, scanner);
         Category2[] categories = new Category2[2];
         categories[0] = new Category2("meal", list1);
         categories[1] = new Category2("phones", list2);
