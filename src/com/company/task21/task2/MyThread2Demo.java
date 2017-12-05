@@ -1,4 +1,6 @@
-package com.company.task21;
+package com.company.task21.task2;
+
+import com.company.task21.task2.MyThread2;
 
 /**
  * Created by student on 04.12.2017.
