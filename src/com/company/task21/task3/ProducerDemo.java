@@ -6,13 +6,10 @@ import java.util.Queue;
 public class ProducerDemo {
     public static void main(String[] args) {
         Queue<Integer> queue = new ArrayDeque<>();
-        for(int i = 0; i < 100;i++) {
-            queue.add(i);
-        }
-        MyQueue<Integer> myQueue = new MyQueue<>(queue);
+        MyQueue myQueue = new MyQueue(queue);
 
-        Consumer<Integer> consumer = new Consumer<>(myQueue);
-        Producer<Integer> producer = new Producer<>(myQueue);
+        Consumer consumer = new Consumer(myQueue);
+        Producer producer = new Producer(myQueue);
 
         Thread t1 = new Thread(consumer);
         Thread t2 = new Thread(producer);

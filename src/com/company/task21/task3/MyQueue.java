@@ -3,20 +3,19 @@ package com.company.task21.task3;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class MyQueue<T> {
-    private Queue<T> n = new ArrayDeque<>();
-    boolean valueSet = false;
+public class MyQueue {
+    private Queue<Integer> n = new ArrayDeque<>();
 
-    public MyQueue(Queue<T> n) {
+    public MyQueue(Queue<Integer> n) {
         this.n = n;
     }
 
-    public Queue<T> getN() {
+    public Queue<Integer> getN() {
         return n;
     }
 
-    public synchronized T get() {
-        while (!valueSet) {
+    public synchronized Integer get() {
+        while (n.isEmpty()) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -24,21 +23,11 @@ public class MyQueue<T> {
             }
         }
         System.out.printf("Пoлyчeнo: %s потоком %s%n", n.peek(), Thread.currentThread().getName());
-        valueSet = false;
-        notify();
         return n.poll();
     }
 
-    public synchronized void put(T n) {
-        while (valueSet) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        valueSet = true;
-        this.n.offer(n);
+    public synchronized void put(int n) {
+        this.n.add(n);
         System.out.println("Oтпpaвлeнo: " + n);
         notifyAll();
     }
