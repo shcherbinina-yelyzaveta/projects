@@ -8,9 +8,9 @@ import java.util.Set;
 public class PetsDemo {
     public static void main(String[] args) {
         Map<String, Pet> pets = new HashMap<>();
-        pets.put("Cat", new Cat(4, "grey"));
+        pets.put("Cat1", new Cat(4, "grey"));
         pets.put("Dog", new Dog(6, "black"));
-        pets.put("Cat", new Cat(5, "white"));
+        pets.put("Cat2", new Cat(5, "white"));
         pets.put("Parrot", new Parrot(4, "white"));
 
         printMap(pets);
