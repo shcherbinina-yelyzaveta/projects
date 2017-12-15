@@ -9,11 +9,12 @@ public class ProducerDemo {
         MyQueue myQueue = new MyQueue(queue);
 
         Consumer consumer = new Consumer(myQueue);
+        Consumer consumer2 = new Consumer(myQueue);
         Producer producer = new Producer(myQueue);
 
         Thread t1 = new Thread(consumer);
         Thread t2 = new Thread(producer);
-        Thread t3 = new Thread(consumer);
+        Thread t3 = new Thread(consumer2);
 
         t1.start();
         t2.start();
