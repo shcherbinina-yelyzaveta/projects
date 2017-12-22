@@ -2,15 +2,22 @@ package com.company.task22;
 
 /**
  * Класс, описывающий продукт
+ *
  * @author Shcherbinina
  * @date 22.12.2017
  */
 public class Product {
-    /** Название продукта */
+    /**
+     * Название продукта
+     */
     private String name;
-    /** Цена подукта */
+    /**
+     * Цена подукта
+     */
     private int value;
-    /** Рейтинг */
+    /**
+     * Рейтинг
+     */
     private int rating;
 
     /**
@@ -24,8 +31,9 @@ public class Product {
 
     /**
      * Конструктор с параметрами
-     * @param name устанавливаемое название продукта
-     * @param value устанавливаемая цена продукта
+     *
+     * @param name   устанавливаемое название продукта
+     * @param value  устанавливаемая цена продукта
      * @param rating устанавливаемый рейтинг
      */
     public Product(String name, int value, int rating) {
@@ -36,6 +44,7 @@ public class Product {
 
     /**
      * Конструктор копирования
+     *
      * @param product копируемый объект
      */
     public Product(Product product) {
@@ -46,6 +55,7 @@ public class Product {
 
     /**
      * Геттер названия
+     *
      * @return название продукта
      */
     public String getName() {
@@ -54,6 +64,7 @@ public class Product {
 
     /**
      * Сеттер названия
+     *
      * @param name устанавливаемое значение
      */
     public void setName(String name) {
@@ -62,6 +73,7 @@ public class Product {
 
     /**
      * Геттер цены
+     *
      * @return цена продукта
      */
     public int getValue() {
@@ -70,6 +82,7 @@ public class Product {
 
     /**
      * Сеттер цены
+     *
      * @param value устанавливаемое значение
      */
     public void setValue(int value) {
@@ -78,6 +91,7 @@ public class Product {
 
     /**
      * Геттер рейтинга
+     *
      * @return рейтинг
      */
     public int getRating() {
@@ -86,6 +100,7 @@ public class Product {
 
     /**
      * Сеттер рейтинга
+     *
      * @param rating устанавливаемое значение
      */
     public void setRating(int rating) {
